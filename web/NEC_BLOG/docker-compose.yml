@@ -1,0 +1,35 @@
+name: nec-wp2shell
+
+services:
+  wp2shell-web:
+    build: ./web
+    container_name: nec-wp2shell-web
+    user: "10001:10001"
+    ports:
+      - "8082:5000"
+    environment:
+      DB_PATH: /data/wp2shell.db
+      FLAG_PATH: /opt/wp2shell/.flag.txt
+    secrets:
+      - source: wp2shell_flag
+        target: /opt/wp2shell/.flag.txt
+    volumes:
+      - wp2shell-data:/data
+    networks:
+      - wp2shell_net
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:5000/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+networks:
+  wp2shell_net:
+    driver: bridge
+
+volumes:
+  wp2shell-data:
+
+secrets:
+  wp2shell_flag:
+    file: ./runtime/wp2shell_flag

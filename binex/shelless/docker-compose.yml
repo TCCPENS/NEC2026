@@ -1,0 +1,6 @@
+services:
+  shelless:
+    build: .
+    image: shelless:latest
+    ports:
+      - "31337:31337"

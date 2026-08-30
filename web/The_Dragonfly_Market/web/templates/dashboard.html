@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block title %}My notebook — Dragonfly Marketplace{% endblock %}
+{% block content %}
+<section class="dashboard-page"><div class="dashboard-head"><div><p class="kicker">MEMBER NOTEBOOK</p><h1>Hello, {{ user.sub }}.</h1><p>Your saved observations and marketplace activity.</p></div><span class="member-badge">{% if user.role == 'admin' %}ADMIN MEMBER{% else %}FIELD MEMBER{% endif %}</span></div><div class="dashboard-grid"><div class="dash-card"><span class="dash-number">03</span><h2>Saved field notes</h2><p>Three observations are waiting in your notebook.</p><a href="{{ url_for('marketplace') }}">Browse specimens →</a></div><div class="dash-card"><span class="dash-number">01</span><h2>Pending request</h2><p>Your request for field notes is being reviewed.</p><a href="{{ url_for('marketplace') }}">Add another request →</a></div>{% if user.role == 'admin' %}<div class="dash-card admin-dash-card"><span class="dash-number">OPS</span><h2>Operations console</h2><p>Supplier connectivity and catalogue operations tools.</p><a href="{{ url_for('admin') }}">Open admin dashboard →</a></div>{% endif %}</div></section>
+{% endblock %}

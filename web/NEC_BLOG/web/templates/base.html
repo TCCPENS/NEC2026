@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="WordPress 6.9.4">
+  <title>{% block title %}NEC Newsroom{% endblock %}</title>
+  <style>
+    :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; color: #18202a; background: #f5f7fa; }
+    * { box-sizing: border-box; } body { margin: 0; background: #f5f7fa; }
+    main { max-width: 1080px; margin: 0 auto; padding: 0 24px 72px; }
+    a { color: #1457a6; text-decoration: none; } a:hover { text-decoration: underline; }
+    .site-header { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 24px 0; border-bottom: 1px solid #dbe2ea; }
+    .brand { color: #172b4d; font-weight: 800; letter-spacing: -.03em; font-size: 21px; } .brand small { display:block; color:#66758a; font-size: 10px; letter-spacing: .11em; text-transform: uppercase; margin-top: 3px; }
+    nav { display:flex; gap: 22px; font-size: 13px; font-weight: 600; } nav a { color: #536174; }
+    .muted { color: #6a788c; } .eyebrow { color: #1769aa; text-transform: uppercase; letter-spacing: .13em; font-size: 11px; font-weight: 800; }
+    .card { border: 1px solid #dbe2ea; border-radius: 8px; background: #fff; padding: 26px; margin-top: 24px; box-shadow: 0 5px 18px rgba(22, 42, 66, .04); }
+    input, textarea { box-sizing: border-box; width: 100%; background: #fff; color: #18202a; border: 1px solid #b9c5d2; border-radius: 5px; padding: 12px; margin: 8px 0 18px; }
+    textarea { min-height: 260px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; } button { background: #1769aa; color: #fff; border: 0; border-radius: 5px; padding: 12px 18px; cursor: pointer; font-weight: 700; }
+    pre { white-space: pre-wrap; word-break: break-word; background: #111b2a; color: #dcecff; padding: 16px; overflow: auto; }
+    h1, h2 { color: #172b4d; letter-spacing: -.04em; } h1 { font-size: clamp(34px, 6vw, 58px); line-height: 1.05; } h2 { font-size: 26px; }
+    .hero { padding: 70px 0 48px; max-width: 780px; } .hero p { font-size: 18px; line-height: 1.7; color: #526175; }
+    .grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 24px; } .tag { color: #1769aa; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .footer { border-top: 1px solid #dbe2ea; margin-top: 70px; padding-top: 22px; font-size: 12px; color: #718096; }
+    @media (max-width: 700px) { .site-header { align-items: flex-start; flex-direction: column; } nav { gap: 14px; flex-wrap: wrap; } .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body><main>
+  <header class="site-header">
+    <a class="brand" href="/">NEC Newsroom<small>Network Engineering Competition</small></a>
+    <nav><a href="/">Beranda</a><a href="/#berita">Berita</a><a href="/#agenda">Agenda</a><a href="/wp-login.php">Redaksi</a></nav>
+  </header>
+  {% block content %}{% endblock %}
+  <footer class="footer">NEC Newsroom · Informasi dan kabar terbaru Network Engineering Competition</footer>
+</main></body>
+</html>

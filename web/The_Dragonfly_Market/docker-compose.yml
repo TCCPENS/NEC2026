@@ -1,0 +1,48 @@
+name: dragonfly-marketplace
+
+services:
+  dragonfly-web:
+    build: ./web
+    container_name: dragonfly-web
+    user: "10001:10001"
+    ports: ["8080:5000"]
+    environment:
+      DB_PATH: /data/dragonfly.db
+      JWT_SECRET: dragonfly-local-secret
+    secrets:
+      - source: dragonfly_flag
+        target: /var/lib/.field/flag.txt
+    volumes:
+      - db-data:/data
+      - ./database:/init:ro
+    networks: [dragonfly_net]
+    depends_on:
+      dragonfly-db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:5000/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  dragonfly-db:
+    image: alpine:3.20
+    user: "65534:65534"
+    command: ["tail", "-f", "/dev/null"]
+    networks: [dragonfly_net]
+    healthcheck:
+      test: ["CMD", "true"]
+      interval: 3s
+      timeout: 2s
+      retries: 10
+
+networks:
+  dragonfly_net:
+    driver: bridge
+
+volumes:
+  db-data:
+
+secrets:
+  dragonfly_flag:
+    file: ./runtime/dragonfly_flag

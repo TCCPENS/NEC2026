@@ -1,0 +1,8 @@
+name: Signal Recovery
+category: Binary Exploitation
+value: 100
+type: standard
+state: visible
+description: The relay accepted a diagnostic packet, but the captured signal is still missing. Can you recover it?
+files:
+  - dist/signal_recovery

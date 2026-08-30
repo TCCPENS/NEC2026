@@ -1,0 +1,11 @@
+name: Shelless
+category: Binary Exploitation
+value: 500
+type: standard
+state: visible
+description: |
+  Shell? Tidak ada.
+  Kalau ingin membaca sesuatu, gunakan apa yang masih diperbolehkan.
+files:
+  - dist/shelless
+  - dist/libc.so.6

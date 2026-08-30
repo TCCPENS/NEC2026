@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Dragonfly Marketplace{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>.profile-menu{display:flex;align-items:center;gap:16px}.admin-link{color:var(--rust);font-size:11px;text-decoration:none;border-right:1px solid var(--line);padding-right:16px}.admin-link span{margin-left:5px}.profile-link{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-size:12px}.profile-avatar{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px}.profile-name{max-width:115px;overflow:hidden;text-overflow:ellipsis}.logout-link{color:var(--soft);font-size:11px;text-decoration:none;border-left:1px solid var(--line);padding-left:16px}.logout-link:hover,.admin-link:hover{color:var(--rust)}@media(max-width:760px){.profile-name,.logout-link{display:none}}</style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="{{ url_for('home') }}"><span class="wordmark-dot"></span><span>dragonfly<small>marketplace</small></span></a>
+    <nav class="site-nav"><a href="{{ url_for('marketplace') }}">Shop</a><a href="{{ url_for('home') }}#about">About us</a><a href="{{ url_for('dashboard') }}">My notebook</a></nav>
+    {% if session_user %}<div class="profile-menu">{% if session_user.role == 'admin' %}<a class="admin-link" href="{{ url_for('admin') }}">Operations <span>↗</span></a>{% endif %}<a class="profile-link" href="{{ url_for('dashboard') }}"><span class="profile-avatar">{{ session_user.sub[0]|upper }}</span><span class="profile-name">{{ session_user.sub }}</span></a><a class="logout-link" href="{{ url_for('logout') }}">Sign out</a></div>{% else %}<a class="account-link" href="{{ url_for('login') }}">Sign in <span>↗</span></a>{% endif %}
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer class="site-footer"><span>Dragonfly Marketplace</span><span>Quietly collected, carefully catalogued.</span><span>© 2026</span></footer>
+</body>
+</html>

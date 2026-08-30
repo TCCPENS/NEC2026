@@ -1,0 +1,1 @@
+NEC{stack_frames_are_signal_paths}

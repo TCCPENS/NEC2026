@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block title %}Sign in — Dragonfly Marketplace{% endblock %}
+{% block content %}
+<section class="auth-page"><div class="auth-aside"><p class="kicker">MEMBER NOTEBOOK</p><h1>Keep the things worth looking at.</h1><p>Save field notes, follow specimens, and keep your collection in one quiet place.</p></div><div class="auth-box"><p class="kicker">SIGN IN</p><h2>Welcome back.</h2><p class="auth-help">Use your marketplace account to continue.</p>{% if error %}<div class="error">{{ error }}</div>{% endif %}<form method="post"><label>Username<input name="username" autocomplete="username" required></label><label>Password<input type="password" name="password" autocomplete="current-password" required></label><button class="dark-button" type="submit">Continue <span>→</span></button></form></div></section>
+{% endblock %}

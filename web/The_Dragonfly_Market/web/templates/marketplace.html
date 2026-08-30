@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Shop — Dragonfly Marketplace{% endblock %}
+{% block content %}
+<section class="listing-header"><p class="kicker">THE MARKETPLACE</p><div><h1>Current field list</h1><p>Five specimens, selected for colour, character, and the stories they carry from the water’s edge.</p></div><span class="listing-count">05 / 05</span></section>
+<section class="collection-section listing-section"><div class="product-grid">{% for p in products %}<article class="product-card"><a href="{{ url_for('product', pid=p.id) }}" class="product-photo {{ p.accent }}" style="background-image:url('{{ url_for('static', filename='dragonfly-wetland.png') }}')"><span class="photo-index">{{ '%02d'|format(loop.index) }}</span></a><div class="product-info"><div class="product-status">{{ p.stock }}</div><h3><a href="{{ url_for('product', pid=p.id) }}">{{ p.name }}</a></h3><p>{{ p.description }}</p><div class="product-bottom"><strong>{{ p.price }}</strong><a href="{{ url_for('product', pid=p.id) }}">View details <span>↗</span></a></div></div></article>{% endfor %}</div></section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Dragonfly Marketplace — Field specimens{% endblock %}
+{% block content %}
+<section class="home-hero">
+  <div class="hero-copy">
+    <p class="kicker">A small marketplace for remarkable insects</p>
+    <h1>Look closer.</h1>
+    <p class="hero-intro">Dragonflies for collectors, photographers, and patient observers. Browse the current field list.</p>
+    <a class="text-button" href="{{ url_for('marketplace') }}">Browse specimens <span>→</span></a>
+    <div class="hero-meta"><span>01</span><span>Field list / August 2026</span></div>
+  </div>
+  <figure class="hero-image"><img src="{{ url_for('static', filename='dragonfly-wetland.png') }}" alt="A blue dragonfly resting on a reed"><figcaption><span>Blue dasher</span><span>Southern marsh study</span></figcaption></figure>
+</section>
+<section class="intro-strip" id="about"><p class="kicker">WHY DRAGONFLY</p><p>We keep the catalogue small and the notes useful. Every listing starts with a species, a place, and a reason to pay attention.</p><a href="{{ url_for('marketplace') }}">Our field list →</a></section>
+<section class="collection-section"><div class="section-title"><div><p class="kicker">THE CURRENT LIST</p><h2>Selected specimens</h2></div><a href="{{ url_for('marketplace') }}">View all specimens</a></div><div class="product-grid">{% for p in products %}<article class="product-card"><a href="{{ url_for('product', pid=p.id) }}" class="product-photo {{ p.accent }}" style="background-image:url('{{ url_for('static', filename='dragonfly-wetland.png') }}')"><span class="photo-index">0{{ loop.index }}</span></a><div class="product-info"><div class="product-status">{{ p.stock }}</div><h3><a href="{{ url_for('product', pid=p.id) }}">{{ p.name }}</a></h3><p>{{ p.description }}</p><div class="product-bottom"><strong>{{ p.price }}</strong><a href="{{ url_for('product', pid=p.id) }}">View details <span>↗</span></a></div></div></article>{% endfor %}</div></section>
+{% endblock %}
