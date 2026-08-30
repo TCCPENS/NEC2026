@@ -4,6 +4,8 @@ Repository ini merupakan dump resmi challenge CTF Network Engineering Competitio
 
 Materi di dalam repository ini disediakan sebagai bahan pembelajaran dan evaluasi, khususnya untuk mempelajari kembali challenge yang tersedia selama perlombaan.
 
+Kegiatan ini diselenggarakan oleh PT Capoeng Digital Nusantara di SMK 8 Malang pada 29 Agustus 2026.
+
 ## Kategori CTF Jeopardy
 
 * Binary Exploitation
