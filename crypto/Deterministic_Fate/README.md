@@ -1,6 +1,6 @@
 # Deterministic Fate
 
-by NEC2026 team
+by Coslow
 
 ---
 

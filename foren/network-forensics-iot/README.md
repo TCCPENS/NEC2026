@@ -1,6 +1,6 @@
 # IoT Security Research
 
-by NEC2026 team
+by Coslow
 
 ---
 

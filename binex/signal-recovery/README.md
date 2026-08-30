@@ -1,6 +1,6 @@
 # Signal Recovery
 
-by NEC2026 team
+by Coslow
 
 ---
 

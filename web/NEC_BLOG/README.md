@@ -1,6 +1,6 @@
 # NEC BLOG
 
-by NEC2026 team
+by Coslow
 
 ---
 
